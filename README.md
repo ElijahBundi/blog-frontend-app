@@ -8,11 +8,11 @@ Below are the github links for the frontend and backend.
 ``
 frontend link
 ``
-https://four-gables-app.herokuapp.com/
+https://github.com/ElijahBundi/blog-frontend-app.git
 ``
 backend link
 ``
-https://powerful-gorge-80946.herokuapp.com/houseData
+https://github.com/ElijahBundi/phase-3-sinatra-react-project.git
 
 ## Introduction
 Welcome to construction blog App, where dreams come home! We encourage you to search, read, explore, review and let us guide you home. Our layout is extremely user friendly, offering a beautiful interface as the blogs we offer. Our mantra being the magnitude of the minute, we showcase simplicity in its most grandiose form. 
