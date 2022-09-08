@@ -1,147 +1,96 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
-    'Lucida Sans', Arial, sans-serif;
-}
+# Phase 3 React-Frontend: Construction Blog App
 
-body {
-  background: linear-gradient(
-    90deg,
-    rgba(48, 16, 255, 1) 0%,
-    rgba(100, 115, 255, 1) 100%
-  );
-}
-.todo-app {
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  width: 520px;
-  min-height: 600px;
-  background: #161a2b;
-  text-align: center;
-  margin: 128px auto;
-  border-radius: 10px;
-  padding-bottom: 32px;
-}
+Project name: Construction Blog App
+Author: Elijah Bundi
 
-h1 {
-  margin: 32px 0;
-  color: #fff;
-  font-size: 24px;
-}
+## Links
+Below are the github links for the frontend and backend.
+``
+frontend link
+``
+https://four-gables-app.herokuapp.com/
+``
+backend link
+``
+https://powerful-gorge-80946.herokuapp.com/houseData
 
-.complete {
-  text-decoration: line-through;
-  opacity: 0.4;
-}
+## Introduction
+Welcome to construction blog App, where dreams come home! We encourage you to search, read, explore, review and let us guide you home. Our layout is extremely user friendly, offering a beautiful interface as the blogs we offer. Our mantra being the magnitude of the minute, we showcase simplicity in its most grandiose form. 
 
-.todo-form {
-  margin-bottom: 32px;
-}
 
-.todo-input {
-  padding: 14px 32px 14px 16px;
-  border-radius: 4px 0 0 4px;
-  border: 2px solid #5d0cff;
-  outline: none;
-  width: 320px;
-  background: transparent;
-  color: #fff;
-}
+## Setup
 
-.todo-input::placeholder {
-  color: #e2e2e2;
-}
+After unbundling the project:
 
-.todo-button {
-  padding: 16px;
-  border: none;
-  border-radius: 0 4px 4px 0;
-  cursor: pointer;
-  outline: none;
-  background: linear-gradient(
-    90deg,
-    rgba(93, 12, 255, 1) 0%,
-    rgba(155, 0, 250, 1) 100%
-  );
-  color: #fff;
-  text-transform: capitalize;
-}
+1. Run `npm install` in your terminal.
+2. Run `npm run server`. This will run your backend on port `8004`.
+3. In a new terminal, run `npm start`. This will run your React app on port `8000`.
 
-.todo-input.edit {
-  border: 2px solid #149fff;
-}
+Make sure to open [http://localhost:9292/blogs](http://localhost:9292/blogs) in the browser to verify that your backend is working before you proceed!
 
-.todo-button.edit {
-  background: linear-gradient(
-    90deg,
-    rgba(20, 159, 255, 1) 0%,
-    rgba(17, 122, 255, 1) 100%
-  );
-  padding: 16px 22px;
-}
+The base URL for your backend is: `http://localhost:9292`
 
-.todo-container {
-  display: flex;
-  flex-direction: row;
-  position: relative;
-}
+## Core Deliverables
 
-.todo-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 4px auto;
-  color: #fff;
-  background: linear-gradient(
-    90deg,
-    rgba(255, 118, 20, 1) 0%,
-    rgba(255, 84, 17, 1) 100%
-  );
+As a user:
+1. When the app starts, I can see all currently uploaded blogs.
+2. I can add a new blog to the list of blogs while sending that data back to the server.
+3. I can delete blogs and add blogs at will.
+4. I can review and update blogs.
 
-  padding: 16px;
-  border-radius: 5px;
-  width: 90%;
-}
+### Endpoints for Core Deliverables
 
-.todo-row:nth-child(4n + 1) {
-  background: linear-gradient(
-    90deg,
-    rgba(93, 12, 255, 1) 0%,
-    rgba(155, 0, 250, 1) 100%
-  );
+#### GET /blogs
+Example Response:
+```json
+[
+  {
+      "id": 2,
+      "title": "Baraza",
+      "author_id": "barazaokwetu@gmail.com",
+      "content": "Get woken up by the cool breeze of the ocean."
+    },
+    {
+      "id": 3,
+      "title": "Esther",
+      "author_id": "estherhoyt@gmail.com",
+      "content": "Beautiful waterfall scenery."
+    },
+]
+```
+#### POST `/blogs`
+Required Headers:
+```js
+{
+  "Content-Type": "application/json"
 }
-
-.todo-row:nth-child(4n + 2) {
-  background: linear-gradient(
-    90deg,
-    rgba(255, 12, 241, 1) 0%,
-    rgba(250, 0, 135, 1) 100%
-  );
-}
-
-.todo-row:nth-child(4n + 3) {
-  background: linear-gradient(
-    90deg,
-    rgba(20, 159, 255, 1) 0%,
-    rgba(17, 122, 255, 1) 100%
-  );
-}
-
-.icons {
-  display: flex;
-  align-items: center;
-  font-size: 24px;
-  cursor: pointer;
-}
-
-.delete-icon {
-  margin-right: 5px;
-  color: #fff;
-}
-
-.edit-icon {
-  color: #fff;
-}
+```
+Request Object:
+```json
+{
+  "title": "Billy",
+  "author_id": "Omollo",
+  "content": "When you want a town setting."
+},   
+```
+Example Response:
+```json
+{
+  "title": "Billy",
+  "author_id": "Omollo",
+  "content": "When you want a town setting."
+},
+```
+#### DELETE `/blogs/:id`
+```
+Using a button, function and the filter method, a blog can be deleted and the remaining blogs displayed.
+Example Response:
+```json
+{}
+```
+#### Advanced Deliverables
+```
+As a user:
+1. I can add a blog to my favorites and see it on a separate list.
+2. I can click on a blog and see it on a separate page with more detailed content.
+```
