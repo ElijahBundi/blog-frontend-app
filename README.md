@@ -1,7 +1,7 @@
 # Phase 3 React-Frontend: Construction Blog App
 
-Project name: Construction Blog App
-Author: Elijah Bundi
+-Project name: Construction Blog App
+-Author: Elijah Bundi
 
 ## Links
 Below are the github links for the frontend and backend.

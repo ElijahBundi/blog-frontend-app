@@ -7,12 +7,10 @@
 }
 
 body {
-  background: linear-gradient(
-    90deg,
-    rgba(48, 16, 255, 1) 0%,
-    rgba(100, 115, 255, 1) 100%
-  );
+  background: 
+    rgb(55, 88, 75) 0%
 }
+
 .blog-app {
   display: flex;
   flex-direction: column;
@@ -125,7 +123,7 @@ h1 {
 .blog-row:nth-child(4n + 3) {
   background: linear-gradient(
     90deg,
-    rgba(20, 159, 255, 1) 0%,
+    rgb(41, 126, 187) 0%,
     rgba(17, 122, 255, 1) 100%
   );
 }

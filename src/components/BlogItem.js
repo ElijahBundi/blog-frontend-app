@@ -42,7 +42,7 @@ function BlogList() {
 
   return (
     <>
-      <h1>What's the Plan for Today?</h1>
+      <h1>What's the latest blog?</h1>
       <BlogForm onSubmit={addBlog} />
       <Blog
         blogs={blogs}

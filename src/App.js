@@ -1,10 +1,11 @@
 
 import './App.css';
+import BlogList from './components/BlogItem';
 
 function App() {
   return (
-    <div className="App">
-      <h1>Blog List</h1>
+    <div className="blog-app">
+      <BlogList />
     </div>
   );
 }
