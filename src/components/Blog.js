@@ -31,12 +31,9 @@ function Blog({ blogs, onCompleteBlog, onRemoveBlog, onUpdateBlog }) {
   }
 
   return blogs.map((blog, index) => (
-    <div
-      className={Blog.isComplete ? 'blog-row complete' : 'blog-row'}
-      key={index}
-    >
+    <div className= 'blog-row' key={index} >
       <div key={blog.id} onClick={() => onCompleteBlog(blog.id)}>
-        {blog.text}
+        {blog.title}
       </div>
       <div className='icons'>
         <RiCloseCircleLine
