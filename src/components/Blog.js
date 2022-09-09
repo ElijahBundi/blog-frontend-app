@@ -3,13 +3,13 @@ import BlogForm from './BlogForm';
 import { RiCloseCircleLine } from 'react-icons/ri';
 import { TiEdit } from 'react-icons/ti';
 
-const Blog = ({ blogs, onCompleteBlog, onRemoveBlog, onUpdateBlog }) => {
+function Blog({ blogs, onCompleteBlog, onRemoveBlog, onUpdateBlog }) {
   const [edit, setEdit] = useState({
     id: null,
     value: ''
   });
 
-  const submitUpdate = value => {
+  function submitUpdate(value) {
     onUpdateBlog(edit.id, value);
     setEdit({
       id: null,

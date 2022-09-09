@@ -9,11 +9,11 @@ function BlogForm(props) {
     inputRef.current.focus();
   });
 
-  const handleChange = e => {
+  function handleChange(e) {
     setInput(e.target.value);
   };
 
-  const handleSubmit = e => {
+  function handleSubmit(e) {
     e.preventDefault();
 
     props.onSubmit({
