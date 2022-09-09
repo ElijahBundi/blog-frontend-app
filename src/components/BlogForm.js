@@ -22,26 +22,19 @@ function BlogForm(props) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        title: input
+        title: input,
+        content: null,
+        author_id: null
       }),
     })
       .then((r) => r.json())
       .then((newBlog) => {
         props.onAddBlog(newBlog);
         setInput("");
-        console.log(newBlog)
+        console.log(newBlog.title)
       });
   };
 
-  // function handleSubmit(e) {
-  //   e.preventDefault()
-
-  //   props.onSubmit({
-  //     id: Math.floor(Math.random() * 10000),
-  //     text: input
-  //   });
-  //   setInput('');
-  // }
 
   return (
     <form onSubmit={handleSubmit} className='blog-form'>
