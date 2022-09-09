@@ -16,12 +16,32 @@ function BlogForm(props) {
   function handleSubmit(e) {
     e.preventDefault();
 
-    props.onSubmit({
-      id: Math.floor(Math.random() * 10000),
-      text: input
-    });
-    setInput('');
+    fetch("http://localhost:9292/blogs", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        title: input
+      }),
+    })
+      .then((r) => r.json())
+      .then((newBlog) => {
+        props.onAddBlog(newBlog);
+        setInput("");
+        console.log(newBlog)
+      });
   };
+
+  // function handleSubmit(e) {
+  //   e.preventDefault()
+
+  //   props.onSubmit({
+  //     id: Math.floor(Math.random() * 10000),
+  //     text: input
+  //   });
+  //   setInput('');
+  // }
 
   return (
     <form onSubmit={handleSubmit} className='blog-form'>

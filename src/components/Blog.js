@@ -9,6 +9,15 @@ function Blog({ blogs, onCompleteBlog, onRemoveBlog, onUpdateBlog }) {
     value: ''
   });
 
+  // still has an error
+  // function handleDeleteClick(id) {
+  //   fetch(`http://localhost:9292/blogs/${id}`, {
+  //     method: "DELETE",
+  //   });
+
+  //   onRemoveBlog(id);
+  // }
+
   function submitUpdate(value) {
     onUpdateBlog(edit.id, value);
     setEdit({
