@@ -3,14 +3,14 @@ import BlogForm from './BlogForm';
 import { RiCloseCircleLine } from 'react-icons/ri';
 import { TiEdit } from 'react-icons/ti';
 
-const Blog = ({ blogs, completeBlog, removeBlog, updateBlog }) => {
+const Blog = ({ blogs, onCompleteBlog, onRemoveBlog, onUpdateBlog }) => {
   const [edit, setEdit] = useState({
     id: null,
     value: ''
   });
 
   const submitUpdate = value => {
-    updateBlog(edit.id, value);
+    onUpdateBlog(edit.id, value);
     setEdit({
       id: null,
       value: ''
@@ -26,12 +26,12 @@ const Blog = ({ blogs, completeBlog, removeBlog, updateBlog }) => {
       className={Blog.isComplete ? 'blog-row complete' : 'blog-row'}
       key={index}
     >
-      <div key={blog.id} onClick={() => completeBlog(blog.id)}>
+      <div key={blog.id} onClick={() => onCompleteBlog(blog.id)}>
         {blog.text}
       </div>
       <div className='icons'>
         <RiCloseCircleLine
-          onClick={() => removeBlog(blog.id)}
+          onClick={() => onRemoveBlog(blog.id)}
           className='delete-icon'
         />
         <TiEdit

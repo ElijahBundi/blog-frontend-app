@@ -1,6 +1,6 @@
 
 import './App.css';
-import BlogList from './components/BlogItem';
+import BlogList from './components/BlogList';
 
 function App() {
   return (
